@@ -1,0 +1,25 @@
+- name: recordedfuture
+  type: group
+  description: >
+    Fields for Recorded Future Threat Intel
+
+  fields:
+    - name: evidence_details
+      type: flattened
+      description: >
+        List of sightings used as evidence for this indicator.
+
+    - name: name
+      type: keyword
+      description: >
+        Indicator value.
+
+    - name: risk_string
+      type: keyword
+      description: >
+        Details of risk rules observed.
+
+- name: labels.is_ioc_transform_source
+  type: constant_keyword
+  value: "true"
+  description: Field indicating if its the transform source for supporting IOC expiration. This field is dropped from destination indices to facilitate easier filtering of indicators.
